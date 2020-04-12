@@ -4,6 +4,8 @@
   "description": "Golf web site for my trips",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint web/js --ignore-pattern *.stories.* --fix",
+    "start": "browser-sync start -c ./bs-config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/jcdalton2201/golf-journal/issues"
   },
-  "homepage": "https://github.com/jcdalton2201/golf-journal#readme"
+  "homepage": "https://github.com/jcdalton2201/golf-journal#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "proxy-middleware": "^0.15.0"
+  },
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-jasmine": "^4.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "lit-html": "^1.2.1",
+    "prettier": "^2.0.4"
+  }
 }
