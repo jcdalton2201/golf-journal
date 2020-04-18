@@ -5,85 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .small {
-            display: flex;
-            align-items: center;
+        @import url('https://fonts.googleapis.com/css?family=Parisienne&display=swap');
+        body{
+            background-color: green;
         }
-        .logo {
+        .container picture img {
+            border-width: 7px;
+            border-color: rgb(255, 255, 255);
+            border-style: solid;
+            filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 2px 4px);
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 240px;
+            font-size: 1.25rem;
+        }
+        .img1{
+            grid-column: 2/4;
+            grid-row: 1/3;
+        }
+        .img2 {
+            grid-column: 3/5;
+            grid-row: 2/4; 
+        }
+        .text{
+            grid-column: 2/3;
+            grid-row: 3/4;
+            color:white;
+        }
+        .text::first-letter {
+            color: #903;
+            float: left;
+            font-family: 'Parisienne', cursive;
+            font-size: 75px;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            }
+        .hero img {
+            display: block;
+            transform: scaleX(1) scaleY(1);
+            border-width: 0px;
+            border-radius: 0px;
+            filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 2px 13px);
+        }
+        .hero {
             display: flex;
             justify-content: center;
-            align-items: center;
-        }
-        .logoSmall{
-            height: 70px;
-        }
-        .logoSmall img {
-            width: 70px;
-        }
-        .logoMedium{
-            height: 200px;
-        }
-        .logoMedium img {
-            width: 200px;
-        }
-        .logoLarge{
-            height: 600px;
-        }
-        .logolarge img {
-            width: 600px;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
-    <div class='small'>
-        <div class="logo logoSmall">
-            <img src="./images/logo.svg" alt="">
-        </div>
-        <div class="logo logoSmall">
-            <img src="./images/logo2.svg" alt="">
-
-        </div>
-        <div class="logo logoSmall">
-            <img src="./images/logo3.svg" alt="">
-
-        </div>
-        <div class="logo logoSmall">
-            <img src="./images/logo4.svg" alt="">
-        </div>
-        <div class="logo logoSmall">
-            <img src="./images/logo5.svg" alt="">
-        </div>
-        <div class="logo logoSmall">
-            <img src="./images/logo6.svg" alt="">
-        </div>
-        <div class="logo logoSmall">
-            <img src="./images/logo7.svg" alt="">
-        </div>
+    <div class="hero">
+        <picture>
+            <source srcset="images/pebble-hero-1250.webp" type="image/webp">
+            <source srcset="images/pebble-hero-1250.jpg" type="image/jpeg"> 
+            <img src="./images/pebble-hero-1250.webp" alt="Alt Text!">
+          </picture>
     </div>
-
-    <div class='small'>
-        <div class="logo logoMedium">
-            <img src="./images/logo.svg" alt="">
+    <div class="container">
+        <div class="img1">
+            <picture>
+                <source srcset="images/pebble1-600-338.webp" type="image/webp">
+                <source srcset="images/pebble1-600-338.jpg" type="image/jpeg"> 
+                <img src="/images/title.png" alt="Alt Text!">
+              </picture>
         </div>
-        <div class="logo logoMedium">
-            <img src="./images/logo2.svg" alt="">
-
+        <div class="img2">
+            <picture>
+                <source srcset="images/pebble2-600-338.webp" type="image/webp">
+                <source srcset="images/pebble2-600-338.jpg" type="image/jpeg"> 
+                <img src="./images/pebble1-600-338.webp" alt="Alt Text!">
+              </picture>
         </div>
-        <div class="logo logoMedium">
-            <img src="./images/logo3.svg" alt="">
-
-        </div>
-        <div class="logo logoMedium">
-            <img src="./images/logo4.svg" alt="">
-        </div>
-        <div class="logo logoMedium">
-            <img src="./images/logo5.svg" alt="">
-        </div>
-        <div class="logo logoMedium">
-            <img src="./images/logo6.svg" alt="">
-        </div>
-        <div class="logo logoMedium">
-            <img src="./images/logo7.svg" alt="">
+        <div class='text'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
     </div>
     

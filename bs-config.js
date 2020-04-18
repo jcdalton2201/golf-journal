@@ -1,5 +1,6 @@
-var proxy = require('proxy-middleware');
-var url = require('url');
+// var proxy = require('proxy-middleware');
+// var url = require('url');
+
 // var proxyListing = url.parse('http://localhost:8080/api');
 // proxyListing.route = '/api';
 // proxyListing.preserveHost = true;
@@ -23,13 +24,14 @@ module.exports = {
       port: 8080,
     },
   },
-  files: 'web/*.html,web/**/*.js',
+  files: 'docs/*.html,docs/**/*.js',
   watchOptions: {},
+  single: true,
   server: true,
   proxy: false,
   port: 3000,
   middleware: [],
-  serveStatic: ['web', 'dist'],
+  serveStatic: ['docs'],
   ghostMode: {
     clicks: true,
     scroll: true,
