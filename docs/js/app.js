@@ -52,7 +52,7 @@ export class App extends Base {
     }
     .container{
         display:grid;
-        grid-template-columns: repeat(auto-fill,minmax(300px,700px));
+        grid-template-columns: repeat(2,700px);
         grid-auto-rows: minmax(400px,auto);
         grid-column-gap: 24px;
         grid-row-gap: 24px;
@@ -190,10 +190,9 @@ export class App extends Base {
   <div class='${item.short} img' data='${item.short}' @click=${this.linkNavigation}>
     
     <picture>
-      <source media="(max-width: 400px)" srcset="images/${item.short}-350.webp" type="image/webp">
-      <source media="(max-width: 401px)"  srcset="images/${item.short}-350.jpg" type="image/jpeg">
-      <source media="(max-width: 400px)" srcset="images/${item.short}-700.webp" type="image/webp">
-      <source media="(max-width: 401px)" srcset="images/${item.short}-700.jpg" type="image/jpeg">  
+      <source  srcset="images/${item.short}-350.webp 350w, images/${item.short}-700.webp 700w" type="image/webp">
+      <source  srcset="images/${item.short}-350.jpg 350w, images/${item.short}-700.jpg 700w" type="image/jpeg">
+      
       <img src="/images/${item.short}-700.webp" alt="${item.short}" class='frame' >
     </picture>
   </div>

@@ -4,10 +4,7 @@ import { unsafeHTML } from '../lit-html/directives/unsafe-html.js';
 import { Base } from './base.js';
 import { Api } from './api.js';
 export class Artical extends Base {
-//   static get styles() {
-//     // prettier-ignore
-//     return [];
-//   }
+
   static get observedAttributes() {
     return ['articalname'];
   }
@@ -45,7 +42,6 @@ export class Artical extends Base {
   _onPage(entries) {
     for (const entry of entries) {
       entry.target.classList.toggle('show',entry.isIntersecting);
-      
       entry.target.visible = entry.isIntersecting;
     }
   }
