@@ -1,16 +1,20 @@
 export class Route extends EventTarget {
   constructor(params) {
     super(params);
-    // this['windowLoad'] = this['windowLoad'].bind(this);
+    this['windowLoad'] = this['windowLoad'].bind(this);
     this['popstateEvent'] = this['popstateEvent'].bind(this);
     this['navigateTo'] = this['navigateTo'].bind(this);
     window.onload = this.windowLoad;
     window.addEventListener('popstate', this.popstateEvent);
   }
-  //   windowLoad(event) {
-  //     console.log(event);
-  //   }
+  windowLoad() {
+    console.log(window.location);
+    if (window.location.pathname.length > 1) {
+      this.navigateTo(window.location.pathname.replace('/', ''));
+    }
+  }
   popstateEvent(event) {
+    console.log(event);
     const detail = event.state;
     const customEvent = new CustomEvent('loadPage', {
       detail,

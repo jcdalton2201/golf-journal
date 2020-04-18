@@ -14,7 +14,7 @@ export class Artical extends Base {
   constructor() {
     super();
     this.api = new Api();
-    this.bindMethods(['renderArctical']);
+    this.bindMethods(['renderArctical','_onPage']);
     this.baseTemplate = (content) => html`${content}`;
   }
   attributeChangedCallback(name, oldValue, newValue) {
@@ -32,6 +32,22 @@ export class Artical extends Base {
     this.setStyleMap(articalName);
     const content = html`${unsafeHTML(articalJson.html)}`;
     render(this.baseTemplate(content), this.root);
+    this.buildRefs();
+    this.buildAnimation(articalJson.translateObj);
+  }
+  buildAnimation(objs){
+    objs.forEach(item => {
+      this.ob = new IntersectionObserver(this._onPage);
+      this.ob.observe(this.refs[item]);
+    });
+
+  }
+  _onPage(entries) {
+    for (const entry of entries) {
+      entry.target.classList.toggle('show',entry.isIntersecting);
+      
+      entry.target.visible = entry.isIntersecting;
+    }
   }
 }
 

@@ -166,13 +166,12 @@ export class App extends Base {
   }
   constructor() {
     super();
-    this.bindMethods(['linkNavigation', 'loadPage']);
+    this.bindMethods(['linkNavigation', 'loadPage', 'homeClick']);
     this.route = new Route();
     this.route.addEventListener('loadPage', this.loadPage);
     // prettier-ignore
     this.coreTemplate = () => html` 
     <div class='sink' data-ref='sink'>
-      
     </div>`;
     this.articalTemplate = (name) =>
       html`<gj-artical articalname="${name}"></gj-artical>`;
@@ -201,7 +200,10 @@ export class App extends Base {
   <div class='${item.short} title'>${item.name}</div>
   <div class='${item.short} logo' ><img src='./images/${item.short}_logo.webp' width='${item.width}px' height='75px'></div>
   `)}
-  </div>`
+  </div>`;
+    document
+      .querySelector('.homeLink')
+      .addEventListener('click', this.homeClick);
   }
   render() {
     render(this.coreTemplate(), this.root);
@@ -218,6 +220,9 @@ export class App extends Base {
     } else {
       render(this.homeTemplate(), sink);
     }
+  }
+  homeClick() {
+    this.route.navigateTo('');
   }
 }
 if (!customElements.get('gj-app')) {
