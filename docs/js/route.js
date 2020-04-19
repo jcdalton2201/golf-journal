@@ -12,7 +12,8 @@ export class Route extends EventTarget {
   }
   windowLoad() {
     console.log(window.location);
-    if (window.location.pathname.length > 1) {
+    const compair = window.location.pathname.replace(`${this.webContext}/`,'');
+    if (compair.length > 1) {
       this.navigateTo(
         window.location.pathname.replace(`/${this.webContext}`, '')
       );
