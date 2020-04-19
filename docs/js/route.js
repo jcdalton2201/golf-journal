@@ -10,7 +10,7 @@ export class Route extends EventTarget {
   }
   windowLoad() {
     console.log(window.location);
-    if(window.location.hostname === 'jcdalton2201.github.io') {
+    if (window.location.hostname === 'jcdalton2201.github.io') {
       this.home = '/golf-journal/';
     }
     if (window.location.pathname.length > 1) {

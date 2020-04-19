@@ -24,7 +24,7 @@ export class Artical extends Base {
     render(this.baseTemplate(''), this.root);
   }
   async renderArctical(articalName){
-    const articalJson =await this.api.getCall(`stories/${articalName}.json`);
+    const articalJson =await this.api.getCall(`/stories/${articalName}.json`);
     this.addStyle(articalJson.css, articalName);
     this.setStyleMap(articalName);
     const content = html`${unsafeHTML(articalJson.html)}`;
