@@ -6,11 +6,15 @@ export class Route extends EventTarget {
     this['navigateTo'] = this['navigateTo'].bind(this);
     window.onload = this.windowLoad;
     window.addEventListener('popstate', this.popstateEvent);
+    this.home = '/';
   }
   windowLoad() {
     console.log(window.location);
+    if(window.location.hostname === 'jcdalton2201.github.io') {
+      this.home = '/golf-journal/';
+    }
     if (window.location.pathname.length > 1) {
-      this.navigateTo(window.location.pathname.replace('/', ''));
+      this.navigateTo(window.location.pathname.replace(this.home, ''));
     }
   }
   popstateEvent(event) {
