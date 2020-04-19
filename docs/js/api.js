@@ -3,12 +3,15 @@ export class Api {
     this.myHeader = new Headers();
     this.myHeader.append('Content-Type', 'application/json');
     this.myHeader.append('usereid', '');
+    this.webContext = window.location.hostname.includes('jcdalton2201')
+      ? '/golf-journal'
+      : '';
   }
   getCall(url) {
     let options = {
       headers: this.myHeader,
     };
-    return fetch(url, options)
+    return fetch(this.webContext + url, options)
       .then((res) => {
         if (!res.ok) {
           throw new Error(res.statusText);
