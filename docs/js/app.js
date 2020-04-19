@@ -131,6 +131,9 @@ export class App extends Base {
       justify-self: center;
       font-family: 'Gotu';
     }
+    .img {
+      cursor: pointer;
+    }
     
     
     @media only screen and (max-width: 600px) {
@@ -185,9 +188,10 @@ export class App extends Base {
     </div>
   </div>
   
-  <div class="container" data-ref='container'>
+  <nav class="container" data-ref='container'>
+  
     ${courses.map((item) => html`
-  <div class='${item.short} img' data='${item.short}' @click=${this.linkNavigation}>
+  <div class='${item.short} img' data='${item.short}' @click=${this.linkNavigation} role="button" aria-pressed="false">
     
     <picture>
       <source  srcset="images/${item.short}-350.webp 350w, images/${item.short}-700.webp 700w" type="image/webp">
@@ -197,9 +201,9 @@ export class App extends Base {
     </picture>
   </div>
   <div class='${item.short} title'>${item.name}</div>
-  <div class='${item.short} logo' ><img src='./images/${item.short}_logo.webp' width='${item.width}px' height='75px'></div>
+  <div class='${item.short} logo' ><img src='./images/${item.short}_logo.webp' width='${item.width}px' height='75px' alt="${item.short}-logo"></div>
   `)}
-  </div>`;
+  </nav>`;
     document
       .querySelector('.homeLink')
       .addEventListener('click', this.homeClick);

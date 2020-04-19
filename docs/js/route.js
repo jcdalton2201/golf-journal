@@ -12,7 +12,7 @@ export class Route extends EventTarget {
   }
   windowLoad() {
     console.log(window.location);
-    const compair = window.location.pathname.replace(`${this.webContext}/`,'');
+    const compair = window.location.pathname.replace(`${this.webContext}/`, '');
     if (compair.length > 1) {
       this.navigateTo(
         window.location.pathname.replace(`/${this.webContext}`, '')
@@ -36,9 +36,16 @@ export class Route extends EventTarget {
       bubbles: true,
       composed: true,
     });
-    console.log(detail);
+    let leadingSlash = '';
+    if (this.webContext.length > 1) {
+      leadingSlash = '/';
+    }
     document.title = detail;
-    window.history.pushState(detail, detail, `/${this.webContext}/${detail}`);
+    window.history.pushState(
+      detail,
+      detail,
+      `${leadingSlash}${this.webContext}/${detail}`
+    );
     this.dispatchEvent(customEvent);
   }
 }
