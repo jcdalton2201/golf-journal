@@ -14,7 +14,7 @@ export class Route extends EventTarget {
       this.home = '/golf-journal/';
     }
     if (window.location.pathname.length > 1) {
-      this.navigateTo(window.location.pathname.replace(this.home, ''));
+      this.navigateTo(window.location.pathname.replace(this.home, this.home));
     }
   }
   popstateEvent(event) {
