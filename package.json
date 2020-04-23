@@ -4,7 +4,7 @@
   "description": "Golf web site for my trips",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint docs/js --ignore-pattern *.stories.* --fix",
+    "lint": "eslint docs --ignore-pattern *.stories.* --fix",
     "start": "browser-sync start --single -c ./bs-config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "standard-version"
