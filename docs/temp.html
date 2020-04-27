@@ -24,47 +24,40 @@
             width: 100%;
         }
 
-        .section1 {
-            width: 100%;
+        .section picture img {
+            border-width: 7px;
+            border-color: rgb(255, 255, 255);
+            border-style: solid;
+            filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 2px 4px);
+        }
+
+        .section {
             display: grid;
-            grid-template-columns: 1fr;
-
+            grid-template-columns: 10% repeat(3, 1fr) 10%;
+            grid-template-rows: 240px;
+            font-size: 1.25rem;
         }
 
-        .section1 img {
-            width: 100%;
+        .img1 {
+            grid-column: 2/4;
+            grid-row: 1/3;
         }
 
-        .section1 picture {
-            grid-column: 1 /2;
-            grid-row: 1 /2;
+        .img2 {
+            grid-column: 3/5;
+            grid-row: 2/4;
         }
 
-        .section1 .text {
-            grid-column: 1 /2;
-            grid-row: 1 /2;
+        .intro {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            grid-column: 2/3;
+            grid-row: 3/4;
             color: white;
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            font-family: 'Courgette', cursive;
         }
 
-        .section2  {
-            display: grid;
-            justify-content: center;
-            font-family: 'Courgette', cursive;
-            
-        }
-        .section2 .text {
-            background-color: white;
-            font-style: 3rem;
-            max-width: 500px;
-            padding: 16px;
-            margin: 16px 0;
-        }
-        .section2 .text::first-letter {
+        .intro::first-letter {
             color: #903;
             float: left;
             font-family: 'Parisienne', cursive;
@@ -74,8 +67,77 @@
             padding-right: 8px;
             padding-left: 3px;
         }
-        .section2 .text::first-line {
-            font-size: 2.25rem !important;
+
+        .hero img {
+            display: block;
+            border-width: 0px;
+            border-radius: 0px;
+            filter: drop-shadow(rgba(0, 0, 0, 0.5) 0px 2px 13px);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        img {
+            width: 98%;
+        }
+
+        .hero picture img {
+            width: 100%;
+        }
+
+        .white {
+            background-color: white;
+            color: black;
+        }
+
+        .text2 {
+            padding: 14px 4px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .intro {
+                font-size: .75rem;
+                grid-column: 1/2;
+            }
+
+            .section {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                padding: 0 8px;
+            }
+
+            .img1 {
+                grid-column: auto;
+                grid-row: auto;
+                width: 93vw;
+            }
+
+            .img2 {
+                grid-column: auto;
+                grid-row: auto;
+                width: 93vw;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .hero picture img {
+                width: 100%;
+            }
+
+            .text2 {
+                padding: 14px 4px;
+            }
         }
 
         @media only screen and (max-width: 800px) and (min-width: 601px) {
@@ -104,55 +166,63 @@
     <div class="container">
         <div class='section1'>
             <picture>
-                <source media="(min-width: 700px)" data-lazy-srcset="images/spy2-1250.webp 1x" alt="TGJ Podcast"
-                    property="contentUrl" srcset="images/spy2-1250.webp 1x">
-                <source media="(max-width: 700px)" data-lazy-srcset="images/spy2-350.webp 1x, images/spy2-700.webp 2x"
-                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy2-350.webp 1x, images/spy2-700.webp2x">
-                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/spy2-700.webp" alt=""
-                    property="contentUrl" src="images/spy2-700.webp" data-was-processed="true">
+                <source media="(min-width: 700px)" data-lazy-srcset="images/hero-pac-1800.webp 1x" alt="TGJ Podcast"
+                    property="contentUrl" srcset="images/hero-pac-1800.webp 1x">
+                <!-- <source media="(max-width: 700px)" data-lazy-srcset="images/spy2-350.webp 1x, images/spy2-700.webp 2x"
+                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy2-350.webp 1x, images/spy2-700.webp2x"> -->
+                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/hero-pac-1800.webp" alt=""
+                    property="contentUrl" src="images/hero-pac-1800.webp" data-was-processed="true">
             </picture>
-            <div class='text'>
-                Set in the rolling hills of Monterey is Spyglass Hill golf course.
-            </div>
+
         </div>
-        <div class="section2">
-            <div class='text ts1'>
-                Spyglass is a tale of two courses. Pulling up to the clubhouse, you might miss it. It is small but has all the things 
-                you need to get started. The day we played, there was a dense marine layer in the area. The first hole begins on top 
-                of the hill and drifts down and to the left to the sea. Now you can see the ocean for the next four holes.  These are 
-                some of the more memorable holes on the course, including the fun 4th. The 4th is a short par four with a long thin 
-                green that slopes away from you.  A missed place tee shot or a lousy approach will cause you to bogie this hole.
+        <div class="section2 section">
+            <div class="img1">
+                <picture>
+                    <source srcset='images/bandon1-300.webp 270w,images/bandon1-500.webp 350w' type='image/webp'>
+                    <source srcset='images/bandon1-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'>
+                </picture>
             </div>
+            <div class="img2">
+                <picture>
+                    <source srcset='images/bandon2-300.webp 270w,images/bandon2-500.webp 350w' type='image/webp'>
+                    <source srcset='images/bandon2-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'>
+                </picture>
+            </div>
+            <div class='intro' data-ref='intro'>Along the Pacific coast is the modern-day mecca for golfers. Bandon Dunes is the west coast version of Pinehurst. With five courses, a par 3, and a punch bowl putting course, it has set how golf resorts should be.  The first course for us was Pacific Dunes. Pacific was the second course built on the property. The more dramatic layout, the Pacific course has more towering dunes, more significant undulations, and tricker greens then Bandon. Still, it gives you plenty of opportunities to make strategic decisions during your round.</div>
         </div>
+
         <div class='section1'>
             <picture>
-                <source media="(min-width: 700px)" data-lazy-srcset="images/spy1-1250.webp 1x" alt="TGJ Podcast"
-                    property="contentUrl" srcset="images/spy1-1250.webp 1x">
-                <source media="(max-width: 700px)" data-lazy-srcset="images/spy1-350.webp 1x, images/spy1-700.webp 2x"
-                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy1-350.webp 1x, images/spy1-700.webp2x">
-                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/spy1-700.webp" alt=""
-                    property="contentUrl" src="images/spy1-700.webp" data-was-processed="true">
+                <source media="(min-width: 700px)" data-lazy-srcset="images/bandon3-500.webp 1x" alt="TGJ Podcast"
+                    property="contentUrl" srcset="images//bandon3-500.webp 1x">
+                <!-- <source media="(max-width: 700px)" data-lazy-srcset="images/spy2-350.webp 1x, images/spy2-700.webp 2x"
+                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy2-350.webp 1x, images/spy2-700.webp2x"> -->
+                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/bandon3-300.webp" alt=""
+                    property="contentUrl" src="images/bandon3-300.webp" data-was-processed="true">
             </picture>
-            <div class='text'>
-                Travel to the ocean then back again.
+
+        </div>
+
+        <div class="section2 section">
+            <div class="img1">
+                <picture>
+                    <source srcset='images/bandon4-300.webp 270w,images/bandon4-500.webp 350w' type='image/webp'>
+                    <source srcset='images/bandon4-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'>
+                </picture>
             </div>
-        </div>
-        <div class="section2">
-            <div class='text ts2'>
-                After four holes by the ocean, it is now time to travel back inland. The rest of the course is a winding journey through the pine trees. If you been North Caroline or East Texas pines, you will recognize this course. While you have plenty of room on the fairways, you will have to place your shots carefully to have any chance on your approach shots. The rough is a no go on most days as all you can do is just hope to get back to the fairway. I would recommend a caddy and walking the course over to get a cart. Spyglass is a cart path only course, and the walk from the path to the fairway is always an up, down, up, down, walk. Plus, the knowledge of the caddies does make the rounds so much enjoyable. I would still take Pebble Beach over Spyglass, but this is one of the top courses in the world.
+            <div class="img2">
+                <picture>
+                    <source srcset='images/bandon5-300.webp 270w,images/bandon5-500.webp 350w' type='image/webp'>
+                    <source srcset='images/bandon5-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'>
+                </picture>
             </div>
+            <div class='intro' data-ref='ts2'>You will forget that you are still in the states as you play this course. Visions of Scotland and Ireland will infiltrate your every senses. The links-style of play is here in spades. If you like that style, you will love this course. Travel here is not for the faint of heart.  It is a four-hour drive from Portland unless you are lucky to get a seasonal flight into North Bend OR 43 miles north of Bandon. The other bonus of Bandon Dunes is the replay rate. If you are one that likes to play 36 a day, then it is very doable. I would recommend a caddie on these courses. They can give you valuable information on how to play the course. </div>
         </div>
-        <div class='section1'>
-            <picture>
-                <source media="(min-width: 700px)" data-lazy-srcset="images/spy5-1250.webp 1x" alt="TGJ Podcast"
-                    property="contentUrl" srcset="images/spy5-1250.webp 1x">
-                <source media="(max-width: 700px)" data-lazy-srcset="images/spy5-350.webp 1x, images/spy5-700.webp 2x"
-                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy5-350.webp 1x, images/spy5-700.webp2x">
-                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/spy5-700.webp" alt=""
-                    property="contentUrl" src="images/spy5-700.webp" data-was-processed="true">
-            </picture>
-            
-        </div>
+
     </div>
 </body>
 
