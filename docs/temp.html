@@ -14,9 +14,26 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
+            font-family: 'Goudy Bookletter', cursive;
+
+
         }
-
-
+        .section1 {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .hero-text {
+            font-size: 3rem;
+            color: white;
+            grid-column: 1/2;
+            grid-row:1/2;
+            justify-self: center;
+            align-self: flex-end;
+        }
+        .section1 picture {
+            grid-column: 1/2;
+            grid-row:1/2;
+        }
         .container {
             font-size: 1.25rem;
             display: flex;
@@ -87,7 +104,7 @@
         }
 
         img {
-            width: 98%;
+            width: 100%;
         }
 
         .hero picture img {
@@ -159,87 +176,102 @@
                 height: 660px;
             }
         }
+
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
+        <div class="hero">
+            <img src="images/mac1-350.webp"
+                srcset='images/mac1-350.webp 400w,images/mac1-500.webp 700w,images/mac1-700.webp 701w ' alt="hero">
+        </div>
+        <div class="hero-text">
+            Charles MacDonald would feel at home here...
+        </div>
+        <div class="section1">
+            Old MacDonald is the fourth course here at Bandon Dunes. It was built with templates holes from C.B.
+            MacDonald in mind. Template holes are standard design holes across golf courses. You will hear names as
+            Alps,
+            Road, Redan, and Punchbowl, and you will play every one of them here.
+        </div>
+        <div class="section2">
+            <img src="images/mac2-350.webp"
+                srcset='images/mac2-350.webp 400w,images/mac2-500.webp 700w,images/mac2-700.webp 701w ' alt="hero">
+        </div>
+    </div> -->
+
+    <div class='container'>
         <div class='section1'>
             <picture>
-                <source media="(min-width: 700px)" data-lazy-srcset="images/hero-pac-1800.webp 1x" alt="TGJ Podcast"
-                    property="contentUrl" srcset="images/hero-pac-1800.webp 1x">
-                <!-- <source media="(max-width: 700px)" data-lazy-srcset="images/spy2-350.webp 1x, images/spy2-700.webp 2x"
-                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy2-350.webp 1x, images/spy2-700.webp2x"> -->
-                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/hero-pac-1800.webp" alt=""
-                    property="contentUrl" src="images/hero-pac-1800.webp" data-was-processed="true">
-            </picture>
-
-        </div>
-        <div class="section2 section">
-            <div class="img1">
-                <picture>
-                    <source srcset='images/bandon1-300.webp 270w,images/bandon1-500.webp 350w' type='image/webp'>
-                    <source srcset='images/bandon1-500.webp' type='image/jpeg'> <img src='/images/title.png'
-                        alt='Alt Text!'>
-                </picture>
+                <source media='(min-width: 700px)' data-lazy-srcset='images/mac1-700.webp 1x' alt='TGJ Podcast'
+                    property='contentUrl' srcset='images/mac1-700.webp 1x'>
+                <!-- <source media='(max-width: 700px)' data-lazy-srcset='images/spy2-350.webp 1x, images/spy2-700.webp 2x'alt='TGJ Podcast' property='contentUrl' srcset='images/spy2-350.webp 1x, images/spy2-700.webp2x'> --><img
+                    class='rocket-lazyload lazyloaded' data-lazy-src='images/mac1-700.webp' alt=''
+                    property='contentUrl' src='images/mac1-700.webp' data-was-processed='true'></picture>
+            <div class="hero-text">
+                Charles MacDonald would feel at home here...
             </div>
-            <div class="img2">
-                <picture>
-                    <source srcset='images/bandon2-300.webp 270w,images/bandon2-500.webp 350w' type='image/webp'>
-                    <source srcset='images/bandon2-500.webp' type='image/jpeg'> <img src='/images/title.png'
-                        alt='Alt Text!'>
-                </picture>
-            </div>
-            <div class='intro' data-ref='intro'>Along the Pacific coast is the modern-day mecca for golfers. Bandon Dunes is the west coast version of Pinehurst. With five courses, a par 3, and a punch bowl putting course, it has set how golf resorts should be.  The first course for us was Pacific Dunes. Pacific was the second course built on the property. The more dramatic layout, the Pacific course has more towering dunes, more significant undulations, and tricker greens then Bandon. Still, it gives you plenty of opportunities to make strategic decisions during your round.</div>
         </div>
-
+        <div class='section2 section'>
+            <div class='img1'>
+                <picture>
+                    <source srcset='images/mac2-350.webp 270w,images/mac2-500.webp 350w' type='image/webp'>
+                    <source srcset='images/mac2-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'></picture>
+            </div>
+            <div class='img2'>
+                <picture>
+                    <source srcset='images/mac3-350.webp 270w,images/mac3-500.webp 350w' type='image/webp'>
+                    <source srcset='images/mac3-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'></picture>
+            </div>
+            <div class='intro' data-ref='intro'>Old MacDonald is the fourth course here at Bandon Dunes. It was built with templates 
+                holes from C.B. MacDonald in mind. Template holes are standard design holes across golf courses. You will hear names as Alps,
+                 Road, Redan, and Punchbowl, and you will play every one of them here. You will start inland and play with a friendly and easy par 
+                 four to the Redan hole. Next is the very cool and challenging "Sahara", with its blind tee shot next to the "ghost tree". After you 
+                 hike up the embankment to the tree, you can then see the valley below and the course in all its glory.</div>
+        </div>
         <div class='section1'>
             <picture>
-                <source media="(min-width: 700px)" data-lazy-srcset="images/bandon3-500.webp 1x" alt="TGJ Podcast"
-                    property="contentUrl" srcset="images//bandon3-500.webp 1x">
-                <!-- <source media="(max-width: 700px)" data-lazy-srcset="images/spy2-350.webp 1x, images/spy2-700.webp 2x"
-                    alt="TGJ Podcast" property="contentUrl" srcset="images/spy2-350.webp 1x, images/spy2-700.webp2x"> -->
-                <img class="rocket-lazyload lazyloaded" data-lazy-src="images/bandon3-300.webp" alt=""
-                    property="contentUrl" src="images/bandon3-300.webp" data-was-processed="true">
-            </picture>
-
+                <source media='(min-width: 700px)' data-lazy-srcset='images/mac4-500.webp 1x' alt='TGJ Podcast'
+                    property='contentUrl' srcset='images//mac4-500.webp 1x'>
+                <!-- <source media='(max-width: 700px)' data-lazy-srcset='images/spy2-350.webp 1x, images/spy2-700.webp 2x'alt='TGJ Podcast' property='contentUrl' srcset='images/spy2-350.webp 1x, images/spy2-700.webp2x'> --><img
+                    class='rocket-lazyload lazyloaded' data-lazy-src='images/mac4-350.webp' alt=''
+                    property='contentUrl' src='images/mac4-350.webp' data-was-processed='true'></picture>
         </div>
-
-        <div class="section2 section">
-            <div class="img1">
+        <div class='section2 section'>
+            <div class='img1'>
                 <picture>
-                    <source srcset='images/bandon4-300.webp 270w,images/bandon4-500.webp 350w' type='image/webp'>
-                    <source srcset='images/bandon4-500.webp' type='image/jpeg'> <img src='/images/title.png'
-                        alt='Alt Text!'>
-                </picture>
+                    <source srcset='images/mac5-350.webp 270w,images/mac5-500.webp 350w' type='image/webp'>
+                    <source srcset='images/mac5-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'></picture>
             </div>
-            <div class="img2">
+            <div class='img2'>
                 <picture>
-                    <source srcset='images/bandon5-300.webp 270w,images/bandon5-500.webp 350w' type='image/webp'>
-                    <source srcset='images/bandon5-500.webp' type='image/jpeg'> <img src='/images/title.png'
-                        alt='Alt Text!'>
-                </picture>
+                    <source srcset='images/mac6-350.webp 270w,images/mac6-500.webp 350w' type='image/webp'>
+                    <source srcset='images/mac6-500.webp' type='image/jpeg'> <img src='/images/title.png'
+                        alt='Alt Text!'></picture>
             </div>
-            <div class='intro' data-ref='ts2'>You will forget that you are still in the states as you play this course. Visions of Scotland and Ireland will infiltrate your every senses. The links-style of play is here in spades. If you like that style, you will love this course. Travel here is not for the faint of heart.  It is a four-hour drive from Portland unless you are lucky to get a seasonal flight into North Bend OR 43 miles north of Bandon. The other bonus of Bandon Dunes is the replay rate. If you are one that likes to play 36 a day, then it is very doable. I would recommend a caddie on these courses. They can give you valuable information on how to play the course. </div>
+            <div class='intro' data-ref='ts2'>You will play some of the most abundant greens you will ever encounter in golf. But this is a blessing, you may play a hole ten times, and every time it feels like a different hole. As you play in the dunes, you can hear the ocean in the distance but come to it on the intimidating 7th hole. Then it back into the valley for more golf. The 11th is an homage to the Road Hole at St. Andrews, without having to worry about the road or the hotel to drive over.  My favorite hole is the 16th that uses the "Alps" template. The correct play is down the right side, but with bunkers on this side, it is more tempting to stay left. The left side will give you a bind shot in, but with the large greens, it might be the more natural shot. After the round, you will think about all the different ways you could have played a hole. That's why I love this course. </div>
         </div>
-
     </div>
 </body>
 
 <script>
     // console.log('helloo');
-    // this.refs = {};
-    // document.querySelectorAll('[data-ref]').forEach((ref) => {
-    //     this.refs[ref.dataset.ref] = ref;
-    // });
-    // this.ob = new IntersectionObserver((entries) => {
-    //     for (const entry of entries) {
-    //         entry.target.classList.toggle('show', entry.isIntersecting);
-    //         entry.target.visible = entry.isIntersecting;
-    //     }
-    // });
-    // this.ob.observe(this.refs['intro']);
-    // this.ob.observe(this.refs['text2']);
+    this.refs = {};
+    document.querySelectorAll('[data-ref]').forEach((ref) => {
+        this.refs[ref.dataset.ref] = ref;
+    });
+    this.ob = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            entry.target.classList.toggle('show', entry.isIntersecting);
+            entry.target.visible = entry.isIntersecting;
+        }
+    });
+    this.ob.observe(this.refs['intro']);
+    this.ob.observe(this.refs['ts2']);
 </script>
 
 </html>
